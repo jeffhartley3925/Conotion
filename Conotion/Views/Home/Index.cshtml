@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Compose";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>conotion</title>
+
+    <script type="text/javascript" src="~/Scripts/angular.js"></script>
+    <script type="text/javascript" src="~/Scripts/angular-route.js"></script>
+	<script type="text/javascript" src="~/app/conotionApp/app.js"></script>
+	<script type="text/javascript" src="~/app/conotionApp/compositionViewModel.js"></script>
+	<script type="text/javascript" src="~/Scripts/ngdraggable.js"></script>
+
+    <script type="text/javascript" src="~/app/conotionApp/controllers/composition/indexCtrl.js"></script>
+    <script type="text/javascript" src="~/app/conotionApp/controllers/composition/compositionCtrl.js"></script>
+    <script type="text/javascript" src="~/app/conotionApp/controllers/composition/compositionsCtrl.js"></script>
+
+	<script type="text/javascript" src="~/app/conotionApp/directives/compositionList.js"></script>
+	<script type="text/javascript" src="~/app/conotionApp/directives/composition.js"></script>
+	<script type="text/javascript" src="~/app/conotionApp/directives/bar.js"></script>
+	<script type="text/javascript" src="~/app/conotionApp/directives/stopEvent.js"></script>
+</head>
+<body ng-app="conotionApp">
+	<section id="content">
+		<div>{{error}}</div>
+		<div>{{message}}</div>
+		<div class="container" ng-view>
+
+		</div>
+	</section>
+	
+	<script type="text/javascript" src="~/app/conotionApp/services/defaultValueService.js"></script>
+	<script type="text/javascript" src="~/app/conotionApp/services/enumService.js"></script>
+	<script type="text/javascript" src="~/app/conotionApp/services/vectorService.js"></script>
+	<script type="text/javascript" src="~/app/conotionApp/services/cacheService.js"></script>
+
+</body>
+</html>

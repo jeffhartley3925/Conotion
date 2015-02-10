@@ -1,0 +1,45 @@
+﻿<svg width="1000" height="1000">
+	<g transform="scale({{compositionviewmodel.scale}}) rotate({{compositionviewmodel.angle}})">
+		<g ng-repeat="sg in compositionviewmodel.staffgroups | orderBy:'sequence'" transform="translate(0, {{300 * $index}})">
+
+			<g ng-repeat="s in sg.staves | orderBy:'sequence'" transform="translate(0, {{s.height * $index}})">
+
+				<path d="M 0 0 L {{s.width}} 0 L {{s.width}} {{s.height}} L 0 {{s.height}} Z" fill="{{s.background}}" style="stroke:transparent" />
+
+				<line x1="0" y1="0" x2="{{s.width}}" y2="0" transform="translate(0,59)" style="stroke:{{s.foreground}};stroke-width:1" />
+				<line x1="0" y1="0" x2="{{s.width}}" y2="0" transform="translate(0,67)" style="stroke:{{s.foreground}};stroke-width:1" />
+				<line x1="0" y1="0" x2="{{s.width}}" y2="0" transform="translate(0,75)" style="stroke:{{s.foreground}};stroke-width:1" />
+				<line x1="0" y1="0" x2="{{s.width}}" y2="0" transform="translate(0,83)" style="stroke:{{s.foreground}};stroke-width:1" />
+				<line x1="0" y1="0" x2="{{s.width}}" y2="0" transform="translate(0,91)" style="stroke:{{s.foreground}};stroke-width:1" />
+
+				<line x1="0" y1="0" x2="0" y2="32" transform="translate(0,59)" style="stroke:{{s.foreground}};stroke-width:1" />
+
+				<g transform="translate(0,11)">
+					<path d="{{s.clefVector}}" fill="{{s.foreground}}" />
+				</g>
+
+				<path d="{{s.keyVector}}" fill="{{s.foreground}}" />
+
+				<g transform="translate(65,39)">
+					<path d="{{s.timeSignatureVector}}" fill="{{s.foreground}}" />
+				</g>
+
+				<g ng-repeat="m in s.measures" transform="translate({{m.leftEdge}}, 0)">
+
+					<path d="M 0 0 L {{m.width}} 0 L {{m.width}} {{m.height}} L 0 {{m.height}} Z" fill="{{m.background}}" style="stroke:transparent" />
+
+					<line x1="0" y1="0" x2="{{m.width}}" ys2="0" transform="translate(0,59)" style="stroke:{{m.foreground}};stroke-width:1" />
+					<line x1="0" y1="0" x2="{{m.width}}" y2="0" transform="translate(0,67)" style="stroke:{{m.foreground}};stroke-width:1" />
+					<line x1="0" y1="0" x2="{{m.width}}" y2="0" transform="translate(0,75)" style="stroke:{{m.foreground}};stroke-width:1" />
+					<line x1="0" y1="0" x2="{{m.width}}" y2="0" transform="translate(0,83)" style="stroke:{{m.foreground}};stroke-width:1" />
+					<line x1="0" y1="0" x2="{{m.width}}" y2="0" transform="translate(0,91)" style="stroke:{{m.foreground}};stroke-width:1" />
+
+					<conotion-bar barid="0"></conotion-bar>
+
+					<!--render bar-->
+
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

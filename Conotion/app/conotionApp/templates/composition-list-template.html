@@ -1,0 +1,46 @@
+﻿<accordion class="col-md-8" close-others="oneAtATime">
+	<accordion-group is-open="false" ng-repeat="p in roots">
+		<accordion-heading style="color:green">
+
+			<h4>{{p.CompositionSummary.Title}}</h4>
+			<h5>{{p.CompositionSummary.Subtitle}}</h5>
+
+		</accordion-heading>
+		<button type="button" class="btn btn-primary btn-default" ng-click="edit(p.CompositionSummary.CompositionId)">
+			<span class="glyphicon glyphicon-edit"></span>  Edit
+		</button>
+		<button type="button" class="btn btn-success btn-default" ng-click="play(p.CompositionSummary.CompositionId)">
+			<span class="glyphicon glyphicon-play"></span>  Play
+		</button>
+		<button type="button" class="btn btn-info btn-default" ng-click="lyrics(p.CompositionSummary.CompositionId)">
+			<span class="glyphicon glyphicon-font"></span>  Lyrics
+		</button>
+		<button type="button" class="btn btn-danger btn-default" ng-click="conotion(p.CompositionSummary.CompositionId)">
+			<span class="glyphicon glyphicon-flash"></span>  Collaborations
+		</button>
+		<span ng-repeat="v in p.CompositionSummary.Lyrics">
+			<span>{{v.Index}}. {{v.Text}}</span>
+		</span>
+		<accordion close-others="oneAtATime">
+			<accordion-group is-open="false" ng-repeat="r in p.Collaborations">
+				<accordion-heading>
+					<h4>{{r.Title}}</h4>
+					<h5>{{r.Subtitle}}</h5>
+				</accordion-heading>
+				<button type="button" class="btn btn-success btn-default" ng-click="play(p.CompositionSummary.CompositionId)">
+					<span class="glyphicon glyphicon-music"></span>  Play
+				</button>
+				<button type="button" class="btn btn-info btn-default" ng-click="lyrics(p.CompositionSummary.CompositionId)">
+					<span class="glyphicon glyphicon-font"></span>  Lyrics
+				</button>
+				<button type="button" class="btn btn-warning btn-default" ng-click="conotion(p.CompositionSummary.CompositionId)">
+					<span class="glyphicon glyphicon-transfer"></span>  Merge
+				</button>
+
+				<span ng-repeat="v in r.Lyrics">
+					<span>{{v.Index}}. {{v.Text}}</span>
+				</span>
+			</accordion-group>
+		</accordion>
+	</accordion-group>
+</accordion>

@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>conotion</title>
+	<link rel="stylesheet" type="text/css" href="Content/bootstrap.min.css" />
+	<script type="text/javascript" src="Scripts/angular.js"></script>
+	<script type="text/javascript" src="Scripts/angular-route.js"></script>
+	<script type="text/javascript" src="app/conotionApp/app.js"></script>
+
+	<script type="text/javascript" src="app/conotionApp/controllers/composition/indexCtrl.js"></script>
+	<script type="text/javascript" src="app/conotionApp/controllers/composition/compositionCtrl.js"></script>
+	<script type="text/javascript" src="app/conotionApp/controllers/composition/compositionsCtrl.js"></script>
+</head>
+<body ng-app="conotionApp">
+	<div ng-controller="IndexCtrl">
+		{{appName}}
+
+		<div ng-view></div>
+	</div>
+	<a href='#/composition/1'>composition</a>
+	<a href='#/compositions/3'>composition list</a>
+	<a href='#/nowhere/'>nowhere</a>
+</body>
+</html>

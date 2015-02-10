@@ -1,0 +1,2 @@
+﻿All entities need a CreatedDate and some may need a ModifyDate
+Remove Index from Collaboration entity
